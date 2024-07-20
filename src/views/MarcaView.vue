@@ -8,7 +8,7 @@ const marcas = ref([]);
 const marca = reactive({ ...defaultMarcas });
 
 onMounted(async () => {
-  marcas.value = await marcasApi.buscarMarca();
+  marcas.value = await marcasApi.buscarMarcas();
 });
 
 function limpar() {
@@ -21,7 +21,7 @@ async function salvar() {
   } else {
     await marcasApi.adicionarMarca(marca);
   }
-  marcas.value = await marcasApi.buscarMarca();
+  marcas.value = await marcasApi.buscarMarcas();
   limpar();
 }
 
@@ -31,7 +31,7 @@ function editar(marca_para_editar) {
 
 async function excluir(id) {
   await marcasApi.excluirMarca(id);
-  marcas.value = await marcasApi.buscarMarca();
+  marcas.value = await marcasApi.buscarMarcas();
   limpar();
 }
 </script>
@@ -48,7 +48,7 @@ async function excluir(id) {
   <ul>
     <li v-for="marca in marcas" :key="marca.id">
       <span @click="editar(marca)">
-        ({{ marca.id }}) - {{ marca.descricao }} -
+        ({{ marca.id }}) - {{ marca.nome }} - {{ marca.nacionalidade }} - 
       </span>
       <button @click="excluir(marca.id)">X</button>
     </li>
