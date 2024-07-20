@@ -1,6 +1,6 @@
 import axios from "axios";
 export default class CategoriasApi {
-  async buscarTodasAsCategorias() {
+  async buscarCategorias() {
     const { data } = await axios.get("/categorias/");
     return data.results;
   }

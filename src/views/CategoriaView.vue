@@ -8,7 +8,7 @@ const categorias = ref([]);
 const categoria = reactive({ ...defaultCategoria });
 
 onMounted(async () => {
-  categorias.value = await categoriasApi.buscarTodasAsCategorias();
+  categorias.value = await categoriasApi.buscarCategorias();
 });
 
 function limpar() {
@@ -21,7 +21,7 @@ async function salvar() {
   } else {
     await categoriasApi.adicionarCategoria(categoria);
   }
-  categorias.value = await categoriasApi.buscarTodasAsCategorias();
+  categorias.value = await categoriasApi.buscarCategorias();
   limpar();
 }
 
@@ -31,7 +31,7 @@ function editar(categoria_para_editar) {
 
 async function excluir(id) {
   await categoriasApi.excluirCategoria(id);
-  categorias.value = await categoriasApi.buscarTodasAsCategorias();
+  categorias.value = await categoriasApi.buscarCategorias();
   limpar();
 }
 </script>
