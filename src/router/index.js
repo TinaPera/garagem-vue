@@ -5,6 +5,7 @@ import LoginView from "../views/LoginView.vue";
 import AcessorioView from "../views/AcessorioView.vue";
 import MarcaView from "../views/MarcaView.vue";
 import CorView from "../views/CorView.vue";
+import ModeloView from "../views/ModeloView.vue";
 import LogoutView from "../views/LogoutView.vue";
 
 const router = createRouter({
@@ -34,6 +35,11 @@ const router = createRouter({
       path: "/marcas",
       name: "marcas",
       component: MarcaView,
+    },
+    {
+      path: "/modelos",
+      name: "modelos",
+      component: ModeloView,
     },
     {
       path: "/login",
