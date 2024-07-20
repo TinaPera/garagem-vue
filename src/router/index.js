@@ -6,6 +6,7 @@ import AcessorioView from "../views/AcessorioView.vue";
 import MarcaView from "../views/MarcaView.vue";
 import CorView from "../views/CorView.vue";
 import ModeloView from "../views/ModeloView.vue";
+import VeiculoView from "../views/VeiculoView.vue";
 import LogoutView from "../views/LogoutView.vue";
 
 const router = createRouter({
@@ -40,6 +41,11 @@ const router = createRouter({
       path: "/modelos",
       name: "modelos",
       component: ModeloView,
+    },
+    {
+      path: "/veiculos",
+      name: "veiculos",
+      component: VeiculoView,
     },
     {
       path: "/login",
